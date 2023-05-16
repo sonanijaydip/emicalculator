@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+<script type="text/javascript">
+	function calculate()
+	{
+		var p = document.getElementById('amount').value
+		var r = document.getElementById('rate').value/12/100;
+		var n = document.getElementById('tenure').value
+		// console.log(r)
+
+		var b = p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1)
+
+		document.getElementById('emi').value = Math.round(b);
+		document.getElementById('Interest').value = Math.round(b*n)-p;
+		document.getElementById('Payable_amount').value = Math.round(b*n);
+
+	}
+
+</script>
+
+</head>
+<body>
+<div class="main">
+	<h3>Loan Amount</h3><input type="number" id="amount" class="radhe" name="">
+	<h3>interest rate</h3><input type="number" id="rate" minlength="1" maxlength="2" class="radhe" name="">
+	<h3>Loan tenure</h3><input type="number" id="tenure" class="radhe" minlength="1" maxlength="3" name=""><br><br>
+	<button onclick="calculate()">calculate</button>
+	<h3>Emi</h3><input type="text" id="emi" class="radhe" readonly name="">
+	<h3>Interest</h3><input type="text" id="Interest" class="radhe" readonly name="">
+	<h3>Payable amount(Principal + Intererst)</h3><input type="text" readonly  id="Payable_amount" class="radhe" name="">
+</div>
+
+<style type="text/css">
+	.main{
+		text-align: center;
+		color: blue;
+		background-color: lightgrey;
+		font-size: 20px;
+	}
+	.radhe{
+		height: 30px;
+		width: 25%;
+		font-size: 30px;
+
+	}
+	button{
+		font-size: 20px;
+		width: 15%;
+	}
+	button:hover{
+		background-color: lightblue;
+	}
+
+</style>
+</body>
+</html>

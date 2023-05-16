@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <h1>EMI CALCULATOR</h1>
+        <label for="">Principal Loan Amount</label><br>
+        <input type="text" name="" placeholder="Enter total loan amount" id="principal-amount"><br><br>
+        <label for="">Interest Rate</label><br>
+        <input type="text" name="" placeholder="Enter interest-rate" id="interest-rate"><br><br>
+        <label for="">Loan Term</label> &nbsp;
+        <input type="radio" name="time" id="year"  onclick="loanterm();" value="year">Year
+        <input type="radio" name="time" id="month" onclick="loanterm();"  value="month">Month        
+        <input type="text" name="" disabled  id="loan-term"><br><br>
+        <button id="calculate" class="my-button" onclick="calculate();"><span>Calculate</span></button><br> <br>
+        <label for="">Total EMI</label><br>
+        <input type="text" name="" id="answer"><br> <br>
+        <label for="">Interest Amount</label><br>
+        <input type="text" name="" id="interest"><br><br>
+        <div id="table-div">
+            <table id="emi-table" border="1">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Principal</th>
+                        <th>Interest</th>
+                        <th>Emi</th>
+                        <th>Payable Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
